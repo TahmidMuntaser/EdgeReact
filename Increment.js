@@ -8,16 +8,29 @@ const domContainer = document.querySelector("#root");
 
 //JSX
 
-const myElement = (
-    <div>
-        <h1 id="display">0</h1>
+const Increment = () => {
+    const [counter, setCounter] =  React.useState(0);
+    return(
         <div>
-            <button id ="button">
-                Increment +
-            </button>
+        <h1 id="display">{counter}</h1>
+            <div>
+                <button id ="button" onClick = {() => setCounter(counter+1)}>
+                    Increment +
+                </button>
+                <button id ="button" onClick = {() => setCounter(counter-1)}>
+                    Decrement-
+                </button>
+            </div>
         </div>
-    </div>
-)
+    )
+}
 
 
-ReactDOM.render(myElement, domContainer);
+
+ 
+
+ReactDOM.render(<div className="container">
+    <Increment />
+    <Increment />
+    <Increment />   
+</div>, domContainer);
