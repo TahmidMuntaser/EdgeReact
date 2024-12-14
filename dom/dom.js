@@ -4,6 +4,7 @@ cnt = 0;
 let container = document.querySelector('.container');
 
 // 1 time dom operation
+// batch update
 
 while(cnt<10000){
     array.push(++cnt);
